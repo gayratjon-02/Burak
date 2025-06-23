@@ -1,13 +1,39 @@
-console.log("Train js");
-import chalk from 'chalk';
+// console.log("Train js");
 
-console.log(chalk.blue('Hello world!'));
-// TASK G:
-function getHighestIndex(text){
-    const result = Math.max(...text)
-    console.log(`berilgan array'ning ichidagi eng katta son bu ${chalk.red(`${result}`)} va uning array'dagi index raqami bu ${chalk.bgMagenta.magenta(`${text.indexOf(result)}`)} `);
+
+// H-TASK: 
+
+function getPositive(num){
+    const result = num.filter((ele) => {
+        return ele >= 0;
+    }).join("").toString();
+    console.log(`"${result}"`);
+    console.log(result);
+   
+ 
+
+
 }
-getHighestIndex([5, 21, 12, 21 ,8]); 
+getPositive([1, -4, 2]) ;
+
+
+
+
+
+// shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
+// MASALAN: getPositive([1, -4, 2]) return qiladi "12"
+
+
+
+// import chalk from 'chalk';
+
+// console.log(chalk.blue('Hello world!'));
+// // TASK G:
+// function getHighestIndex(text){
+//     const result = Math.max(...text)
+//     console.log(`berilgan array'ning ichidagi eng katta son bu ${chalk.red(`${result}`)} va uning array'dagi index raqami bu ${chalk.bgMagenta.magenta(`${text.indexOf(result)}`)} `);
+// }
+// getHighestIndex([5, 21, 12, 21 ,8]); 
 
 
 // Yagona parametrga ega function tuzing.
