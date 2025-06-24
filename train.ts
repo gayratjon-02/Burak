@@ -3,15 +3,13 @@
 
 // H-TASK: 
 
-function getPositive(num){
-    const result = num.filter((ele) => {
-        return ele >= 0;
-    }).join("").toString();
-    console.log(`"${result}"`);
+function getPositive(num: number[]): void{
+    const result = num.filter((ele: number) => {
+        return ele >= 0
+    }).join("");
+    console.log(typeof result);
     console.log(result);
-   
- 
-
+    console.log(`"${result}"`);
 
 }
 getPositive([1, -4, 2]) ;
