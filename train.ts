@@ -1,18 +1,29 @@
 // console.log("Train js");
 
+// H2-TASK: 
 
+function getDigits(str: string): void{
+  const result = str.replace(/\D/g, "");
+  console.log(result)
+}
+
+
+getDigits("m14i1t");
+
+// Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+// MASALAN: getDigits("m14i1t") return qiladi "141"
 // H-TASK: 
 
-function getPositive(num: number[]): void{
-    const result = num.filter((ele: number) => {
-        return ele >= 0
-    }).join("");
-    console.log(typeof result);
-    console.log(result);
-    console.log(`"${result}"`);
+// function getPositive(num: number[]): void{
+//     const result = num.filter((ele: number) => {
+//         return ele >= 0
+//     }).join("");
+//     console.log(typeof result);
+//     console.log(result);
+//     console.log(`"${result}"`);
 
-}
-getPositive([1, -4, 2]) ;
+// }
+// getPositive([1, -4, 2]) ;
 
 
 
