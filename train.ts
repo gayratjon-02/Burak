@@ -1,18 +1,17 @@
 // console.log("Train js");
 
-// H2-TASK: 
+// H2-TASK:
 
-function getDigits(str: string): void{
+function getDigits(str: string): void {
   const result = str.replace(/\D/g, "");
-  console.log(result)
+  console.log(result);
 }
-
 
 getDigits("m14i1t");
 
 // Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 // MASALAN: getDigits("m14i1t") return qiladi "141"
-// H-TASK: 
+// H-TASK:
 
 // function getPositive(num: number[]): void{
 //     const result = num.filter((ele: number) => {
@@ -25,14 +24,8 @@ getDigits("m14i1t");
 // }
 // getPositive([1, -4, 2]) ;
 
-
-
-
-
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
 // MASALAN: getPositive([1, -4, 2]) return qiladi "12"
-
-
 
 // import chalk from 'chalk';
 
@@ -42,8 +35,7 @@ getDigits("m14i1t");
 //     const result = Math.max(...text)
 //     console.log(`berilgan array'ning ichidagi eng katta son bu ${chalk.red(`${result}`)} va uning array'dagi index raqami bu ${chalk.bgMagenta.magenta(`${text.indexOf(result)}`)} `);
 // }
-// getHighestIndex([5, 21, 12, 21 ,8]); 
-
+// getHighestIndex([5, 21, 12, 21 ,8]);
 
 // Yagona parametrga ega function tuzing.
 // Va bu function parametr orqalik integer ma'lumot turlariga ega bo'lgan bir arrayni qabul qilsin.
