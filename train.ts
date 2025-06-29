@@ -1,13 +1,30 @@
+/*  Project Standards:
+    - Logging standards
+    - Naming standards
+      function, method, cariable => Camel
+      class => Snake
+      folder => Kebab
+      css => snale
+    - Error handling
+    
+
+
+
+
+*/
+
+
+
 // console.log("Train js");
 
 // H2-TASK:
 
-function getDigits(str: string): void {
-  const result = str.replace(/\D/g, "");
-  console.log(result);
-}
+// function getDigits(str: string): void {
+//   const result = str.replace(/\D/g, "");
+//   console.log(result);
+// }
 
-getDigits("m14i1t");
+// getDigits("m14i1t");
 
 // Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 // MASALAN: getDigits("m14i1t") return qiladi "141"
