@@ -6,11 +6,16 @@
       folder => Kebab
       css => snale
     - Error handling
-    
+*/
 
 
+/* 
 
+Traditinal Api
+Rest Api
+GraphQL Api
 
+.....
 */
 
 
