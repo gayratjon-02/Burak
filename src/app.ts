@@ -7,9 +7,9 @@ import { MORGAN_FORMAT } from "./libs/types/config";
 
 /** 1-ENTERANCE **/
 const app = express();
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"))); // Traditional api
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json()); // REST API
 app.use(morgan(MORGAN_FORMAT));
 /** 2-SESSIONS **/
 
