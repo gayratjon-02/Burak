@@ -1,27 +1,47 @@
-// TASK I:
+// TASK J:
 
-function majorityElement(numArr: number[]) {
-  // console.log(numArr);
-  let maxCount = 0;
-  let maj: number | null = null;
-  for (let i = 0; i < numArr.length; i++) {
-    let count = 0;
-    for (let j = 0; j < numArr.length; j++) {
-      if (numArr[i] === numArr[j]) {
-        count++;
-        // console.log(count);
-      }
-    }
-    if (count > maxCount) {
-      maxCount = count;
-      maj = numArr[i];
-    }
-  }
-
-  console.log(`bu yerda eng kop ${maj} soni qatnashgan`);
+function findLongestWord(arr: string): void {
+  const str = arr.split(" ");
+  const result = str.sort(function (a:string, b:string):number {
+    return b.length - a.length;
+  })[0];
+  console.log(result);
 }
 
-majorityElement([1, 2, 3, 4, 5, 4, 3, 4, 3, 4, 3, 3, 3]);
+findLongestWord("I came from Uzbekistan!");
+
+// Shunday function tuzing, u string qabul qilsin.
+// Va string ichidagi eng uzun so'zni qaytarsin.
+
+// MASALAN: findLongestWord("I came from Uzbekistan!"); return "Uzbekistan!"
+
+// Yuqoridagi text tarkibida 'Uzbekistan'
+// eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda
+
+// TASK I:
+
+// function majorityElement(numArr: number[]) {
+//   // console.log(numArr);
+//   let maxCount = 0;
+//   let maj: number | null = null;
+//   for (let i = 0; i < numArr.length; i++) {
+//     let count = 0;
+//     for (let j = 0; j < numArr.length; j++) {
+//       if (numArr[i] === numArr[j]) {
+//         count++;
+//         // console.log(count);
+//       }
+//     }
+//     if (count > maxCount) {
+//       maxCount = count;
+//       maj = numArr[i];
+//     }
+//   }
+
+//   console.log(`bu yerda eng kop ${maj} soni qatnashgan`);
+// }
+
+// majorityElement([1, 2, 3, 4, 5, 4, 3, 4, 3, 4, 3, 3, 3]);
 
 // Shunday function tuzing, u parametrdagi array ichida eng ko'p
 // takrorlangan raqamni topib qaytarsin.
