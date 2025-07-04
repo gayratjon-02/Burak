@@ -1,8 +1,35 @@
+/*  Project Standards:
+    - Logging standards
+    - Naming standards
+      function, method, cariable => Camel
+      class => Snake
+      folder => Kebab
+      css => snale
+    - Error handling
+*/
+
+/* 
+
+Traditinal Api
+Rest Api
+GraphQL Api
+
+.....
+*/
+
+/*
+
+  Traditional FD  => SSR => EJS
+  Modern FD       => SPA => REACT
+
+
+*/
+
 // TASK J:
 
 function findLongestWord(arr: string): void {
   const str = arr.split(" ");
-  const result = str.sort(function (a:string, b:string):number {
+  const result = str.sort(function (a: string, b: string): number {
     return b.length - a.length;
   })[0];
   console.log(result);

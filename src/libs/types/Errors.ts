@@ -17,20 +17,23 @@ export enum Message {
 
   NO_MEMBER_NICK = "No Member with that member Nick!",
   USED_NICK_PHONE = "You are inserting already used nick or phone!",
-  WRONG_PASSWORD = "Wrong password!"
+  WRONG_PASSWORD = "Wrong password!",
 }
 
-
 class Errors extends Error {
-    public code: HttpCode;
-    public message: Message
+  public code: HttpCode;
+  public message: Message;
 
-    constructor ( statusCode: HttpCode, statusMessage: Message) {
-        super();
-        this.code = statusCode;
-        this.message = statusMessage;
-    }
-} 
+  static standard = {
+    code: HttpCode.INTERNAL_SERVER_ERROR,
+    message: Message.SOMETHING_WENT_WRONG,
+  };
 
+  constructor(statusCode: HttpCode, statusMessage: Message) {
+    super();
+    this.code = statusCode;
+    this.message = statusMessage;
+  }
+}
 
 export default Errors;
