@@ -12,7 +12,8 @@ mongoose
     const PORT = Number(process.env.PORT) || 3003;
 
     app.listen(PORT, function () {
-      console.log(` The server is running successfully on port : http://localhost:${PORT}`);
+      console.info(` The server is running successfully on port : http://localhost:${PORT}/`);
+      console.info(`Admin project on http://localhost:${PORT}/admin \n`)
     });
   })
   .catch((err) => console.log("ERROR on connection MongoDD", err));
