@@ -25,17 +25,43 @@ GraphQL Api
 
 */
 
-// TASK J:
 
-function findLongestWord(arr: string): void {
-  const str = arr.split(" ");
-  const result = str.sort(function (a: string, b: string): number {
-    return b.length - a.length;
-  })[0];
-  console.log(result);
+    // TASK K:
+function countVowels(text:string):void {
+  const vovels = ['a',  'e' ,'i', 'o', 'u' ];
+  const lowerCase = text.toLowerCase().split('');
+  let amountVovel = 0;
+
+  for(let i = 0 ; i < lowerCase.length; i++){
+    if(vovels.includes(lowerCase[i])){
+      amountVovel++;
+    }
+  }
+  console.log(lowerCase)
+  console.log(amountVovel);
 }
 
-findLongestWord("I came from Uzbekistan!");
+
+    countVowels("strriiuuuRAaiiiring"); // return 1
+
+    // Berilayotgan parametr tarkibida nechta unli harf bor
+    // ekanligini aniqlovchi function tuzing
+
+    // MASALAN: countVowels("string"); return 1
+
+    // Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
+    // bo'lganligi uchun '1'ni qaytarmoqda
+// TASK J:
+
+// function findLongestWord(arr: string): void {
+//   const str = arr.split(" ");
+//   const result = str.sort(function (a: string, b: string): number {
+//     return b.length - a.length;
+//   })[0];
+//   console.log(result);
+// }
+
+// findLongestWord("I came from Uzbekistan!");
 
 // Shunday function tuzing, u string qabul qilsin.
 // Va string ichidagi eng uzun so'zni qaytarsin.
