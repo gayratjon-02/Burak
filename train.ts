@@ -24,6 +24,12 @@ GraphQL Api
 
 
 */
+ 
+/**   <Sessions>
+  request join
+  self destroy
+
+ */
 
 
     // TASK K:
