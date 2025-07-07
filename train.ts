@@ -24,7 +24,7 @@ GraphQL Api
 
 
 */
- 
+
 /**   <Sessions>
   request join
   self destroy
@@ -32,31 +32,54 @@ GraphQL Api
  */
 
 
-    // TASK K:
-function countVowels(text:string):void {
-  const vovels = ['a',  'e' ,'i', 'o', 'u' ];
-  const lowerCase = text.toLowerCase().split('');
-  let amountVovel = 0;
-
-  for(let i = 0 ; i < lowerCase.length; i++){
-    if(vovels.includes(lowerCase[i])){
-      amountVovel++;
-    }
+  // TASK L:
+function  reverseSentence(arr:string) {
+  let reversed = '';
+  for (let i = arr.length - 1 ; i>= 0; i--){
+    reversed += arr[i];
   }
-  console.log(lowerCase)
-  console.log(amountVovel);
+  console.log(reversed.split(' ').reverse())
 }
 
 
-    countVowels("strriiuuuRAaiiiring"); // return 1
 
-    // Berilayotgan parametr tarkibida nechta unli harf bor
-    // ekanligini aniqlovchi function tuzing
+  reverseSentence("we like coding!")
 
-    // MASALAN: countVowels("string"); return 1
 
-    // Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
-    // bo'lganligi uchun '1'ni qaytarmoqda
+
+  // So'zlarni ketma - ketligini buzmasdan har bir so'zni
+  // alohida teskarisiga o'girib beradigan fucntion tuzing.
+  // Funtion yagona string qabul qilsin
+  
+  // MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
+  // Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda
+
+
+
+
+// function countVowels(text:string):void {
+//   const vovels = ['a',  'e' ,'i', 'o', 'u' ];
+//   const lowerCase = text.toLowerCase().split('');
+//   let amountVovel = 0;
+
+//   for(let i = 0 ; i < lowerCase.length; i++){
+//     if(vovels.includes(lowerCase[i])){
+//       amountVovel++;
+//     }
+//   }
+//   console.log(lowerCase)
+//   console.log(amountVovel);
+// }
+
+//     countVowels("strriiuuuRAaiiiring"); // return 1
+
+// Berilayotgan parametr tarkibida nechta unli harf bor
+// ekanligini aniqlovchi function tuzing
+
+// MASALAN: countVowels("string"); return 1
+
+// Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
+// bo'lganligi uchun '1'ni qaytarmoqda
 // TASK J:
 
 // function findLongestWord(arr: string): void {
