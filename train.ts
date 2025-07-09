@@ -31,6 +31,19 @@ GraphQL Api
 
  */
 
+  /* VALIDATIONS:
+
+  FrontEnd validation
+   validation
+
+  Backend validation
+  DataBase validation
+  
+  
+  
+  
+  */
+
 
   // TASK L:
 function  reverseSentence(arr:string) {
