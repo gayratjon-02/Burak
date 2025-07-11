@@ -45,18 +45,44 @@ GraphQL Api
   */
 
 
-  // TASK L:
-function  reverseSentence(arr:string) {
-  let reversed = '';
-  for (let i = arr.length - 1 ; i>= 0; i--){
-    reversed += arr[i];
-  }
-  console.log(reversed.split(' ').reverse())
+//   TASK M:
+
+
+function getSquareNumbers(arr: Number[]){
+  // console.log(arr[0]);
+ for(let i = 0; i < arr.length; i++){
+  return  i;
+
+  // Math.pow(arr[i] , 2)
+ }
+  // console.log(result);
+  // console.log(arr);
+  // console.log(arr);
 }
 
+getSquareNumbers([1, 2, 3])
 
 
-  reverseSentence("we like coding!")
+
+// Shunday function tuzing, u raqamlardan tashkil topgan array qabul qilsin
+// va array ichidagi har bir raqam uchun raqamning o'zi va hamda o'sha raqamni kvadratidan
+// tashkil topgan object hosil qilib, hosil bo'lgan objectlarni array ichida qaytarsin
+
+// MASALAN: MASALAN: getSquareNumbers([1, 2, 3]) return [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }];
+
+
+   // TASK L:
+// function  reverseSentence(arr:string) {
+//   let reversed = '';
+//   for (let i = arr.length - 1 ; i>= 0; i--){
+//     reversed += arr[i];
+//   }
+//   console.log(reversed.split(' ').reverse())
+// }
+
+
+
+//   reverseSentence("we like coding!")
 
 
 
