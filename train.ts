@@ -31,7 +31,7 @@ GraphQL Api
 
  */
 
-  /* VALIDATIONS:
+/* VALIDATIONS:
 
   FrontEnd validation
    validation
@@ -44,25 +44,29 @@ GraphQL Api
   
   */
 
-
 //   TASK M:
 
+function getSquareNumbers(numbers: number[]) {
+  let result: { [key: number]: number } = {};
 
-function getSquareNumbers(arr: Number[]){
-  // console.log(arr[0]);
- for(let i = 0; i < arr.length; i++){
-  return  i;
+  for (let i = 0; i < numbers.length; i++) {
+    result[numbers[i]] = numbers[i] * numbers[i];
+  }
 
-  // Math.pow(arr[i] , 2)
- }
-  // console.log(result);
-  // console.log(arr);
-  // console.log(arr);
+  console.log(result);
 }
 
-getSquareNumbers([1, 2, 3])
+getSquareNumbers([1, 2, 3]);
 
 
+
+
+// function getSquareNumbers(a: number[]) {
+//   const result = a.map((a) => a * a);
+//   console.log(result);
+// }
+
+// getSquareNumbers([1, 2, 3, 5]);
 
 // Shunday function tuzing, u raqamlardan tashkil topgan array qabul qilsin
 // va array ichidagi har bir raqam uchun raqamning o'zi va hamda o'sha raqamni kvadratidan
@@ -70,8 +74,7 @@ getSquareNumbers([1, 2, 3])
 
 // MASALAN: MASALAN: getSquareNumbers([1, 2, 3]) return [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }];
 
-
-   // TASK L:
+// TASK L:
 // function  reverseSentence(arr:string) {
 //   let reversed = '';
 //   for (let i = arr.length - 1 ; i>= 0; i--){
@@ -80,21 +83,14 @@ getSquareNumbers([1, 2, 3])
 //   console.log(reversed.split(' ').reverse())
 // }
 
-
-
 //   reverseSentence("we like coding!")
 
+// So'zlarni ketma - ketligini buzmasdan har bir so'zni
+// alohida teskarisiga o'girib beradigan fucntion tuzing.
+// Funtion yagona string qabul qilsin
 
-
-  // So'zlarni ketma - ketligini buzmasdan har bir so'zni
-  // alohida teskarisiga o'girib beradigan fucntion tuzing.
-  // Funtion yagona string qabul qilsin
-  
-  // MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
-  // Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda
-
-
-
+// MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
+// Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda
 
 // function countVowels(text:string):void {
 //   const vovels = ['a',  'e' ,'i', 'o', 'u' ];
