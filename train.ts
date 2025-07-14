@@ -44,19 +44,51 @@ GraphQL Api
   
   */
 
-//   TASK M:
 
-function getSquareNumbers(numbers: number[]) {
-  let result: { [key: number]: number } = {};
 
-  for (let i = 0; i < numbers.length; i++) {
-    result[numbers[i]] = numbers[i] * numbers[i];
+  // TASK N:
+  function palindromCheck(arr:string){
+
+    const result = arr.split('').reverse().join('')
+    // if(result === arr){
+    //   return true
+    // }
+
+   
+    console.log(result === arr)
+
   }
 
-  console.log(result);
-}
+  palindromCheck("dad")
+  palindromCheck("son")
 
-getSquareNumbers([1, 2, 3]);
+  // Parametr sifatida yagona string qabul qiladigan function tuzing.
+  // Va bu function string'ni palindrom so'z yoki palindrom so'z emasligini aniqlab (boolean)
+  // 'true' yokida 'false' qaytarsin.
+  
+  // MASALAN: palindromCheck("dad") return true; palindromCheck("son") return false;
+  // Birinchi misolda 'dad' so'zini ikkala tarafdan o'qilganda ham bir xil ma'noni beradi (true)
+  // Ikkinchi misolda 'son' so'zini ikkala tarafdan o'qilganda bir xil ma'noni bermaydi (false)
+  
+  // *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
+  // bir xil ma'noni beradigan so'zga aytiladi
+
+
+
+
+//   TASK M:
+
+// function getSquareNumbers(numbers: number[]) {
+//   let result: { [key: number]: number } = {};
+
+//   for (let i = 0; i < numbers.length; i++) {
+//     result[numbers[i]] = numbers[i] * numbers[i];
+//   }
+
+//   console.log(result);
+// }
+
+// getSquareNumbers([1, 2, 3]);
 
 
 
