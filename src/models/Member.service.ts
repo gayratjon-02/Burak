@@ -31,7 +31,7 @@ class MemberService {
     // TODO:  consider  member status later
     const member = await this.memberModel
       .findOne(
-        { memberNick: input.memberNick },  
+        { memberNick: input.memberNick },
         { memberNick: 1, memberPassword: 1 }
       )
       .exec();
@@ -45,7 +45,7 @@ class MemberService {
       throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
     }
     return await this.memberModel.findById(member._id).lean().exec();
-    // lean() ishlatish orqali buz databasedan olingan malumotni ozgartirishimiz 
+    // lean() ishlatish orqali buz databasedan olingan malumotni ozgartirishimiz
     // mumkun boladi
   }
 
@@ -86,6 +86,15 @@ class MemberService {
       throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
     }
     return await this.memberModel.findById(member._id).exec();
+  }
+
+  public async getUsers(): Promise<Member[]> {
+    const result = await this.memberModel
+      .find({ memberType: MemberType.USER })
+      .exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
   }
 }
 

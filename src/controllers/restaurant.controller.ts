@@ -108,6 +108,32 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
   }
 };
 
+
+restaurantController.getUsers  = async (req: Request, res: Response) => {
+  try {
+    console.log("getUsers"); // standars
+    const result = await memberService.getUsers();
+
+    console.log("result:::", result)
+
+
+    res.render("users", {data: result})
+  } catch (err) {
+    console.log("Error getUsers:", err);
+    res.redirect("/admin/login");
+  }
+};
+
+
+restaurantController.updateChosenUser = (req: Request, res: Response) => {
+  try {
+    console.log("getUsers"); // standars
+  } catch (err) {
+    console.log("Error getUsers:", err);
+    res.redirect("/admin");
+  }
+};
+
 restaurantController.checkAuthSession = async (
   req: AdminRequest,
   res: Response
@@ -130,7 +156,7 @@ restaurantController.verifyRestaurant = (
 ) => {
   if (req.session?.member?.memberType === MemberType.RESTAURANT) {
     req.member = req.session.member;
-    console.log("req.session: ", req.session.member);
+    // console.log("req.session: ", req.session.member);
     next();
   } else {
     const message = Message.NOT_AUTHENTICATED;
