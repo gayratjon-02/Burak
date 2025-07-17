@@ -4,7 +4,7 @@
 
 <body>
   <div class="signup-container">
-    <form action="/admin/signup" method="POST" enctype="multipart/form-data">
+    <form onsubmit="return validateSignupForm()" action="/admin/signup" method="POST" enctype="multipart/form-data">
       <div class="signup-frame" style="width: 650px">
         <div class="signup-top">
           <span>Signup</span>
@@ -103,6 +103,41 @@
   </div>
 
   <script type="text/javascript" src="/js/signup.js"></script>
+
+
+  <!-- <script>
+ 
+  </script> -->
+
+  <!-- <script>
+    $(function () {});
+    console.log("zzz")
+
+function validateSignupForm() {
+  const memberNick = $(".member-nick").val();
+  const memberPhone = $(".member-phone").val();
+  const memberPassword = $(".member-password").val();
+  const confirmPassword = $(".confirm-password").val();
+
+  if (
+    memberNick === "" ||
+    memberPhone === "" ||
+    memberPassword === "" ||
+    confirmPassword === ""
+  ) {
+    alert("Please insert all required inputs!");
+    return false;
+  }
+
+
+  if(memberPassword !== confirmPassword){
+    alert("Password differs , please check!");
+    return false
+  }
+}
+  </script> -->
+
 </body>
+
 
 <%- include('includes/footer') %>
