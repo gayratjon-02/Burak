@@ -43,38 +43,88 @@ GraphQL Api
   
   
   */
+// TASK O:
 
+// type MyTuple = [number, string, { son: number }, boolean, number];
 
+// function calculateSumOfNumbers(arr:(number | string | obj | boolean)[]){
+//   const result = arr.map((ele) => {
+//     return Number(ele)
+//   })
 
-  // TASK N:
-  function palindromCheck(arr:string){
+//   console.log(result);
+// }
 
-    const result = arr.split('').reverse().join('')
-    // if(result === arr){
-    //   return true
-    // }
+// function calculateSumOfNumbers(arr: (number | string | obj | boolean)[]) {
+//   const sum = arr.reduce((acc: number, el) => {
+//     if (typeof el === "number") {
+//       return acc + el;
+//     } else if (typeof el === "string" && !isNaN(Number(el))) {
+//       return acc + Number(el);
+//     } else if (typeof el === "object" && "son" in el) {
+//       return acc + el.son;
+//     } else {
+//       return acc;
+//     }
+//   }, 0);
 
-   
-    console.log(result === arr)
+//   console.log(sum);
+// }
 
-  }
+// calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 
-  palindromCheck("dad")
-  palindromCheck("son")
+type obj = { son: number };
 
-  // Parametr sifatida yagona string qabul qiladigan function tuzing.
-  // Va bu function string'ni palindrom so'z yoki palindrom so'z emasligini aniqlab (boolean)
-  // 'true' yokida 'false' qaytarsin.
-  
-  // MASALAN: palindromCheck("dad") return true; palindromCheck("son") return false;
-  // Birinchi misolda 'dad' so'zini ikkala tarafdan o'qilganda ham bir xil ma'noni beradi (true)
-  // Ikkinchi misolda 'son' so'zini ikkala tarafdan o'qilganda bir xil ma'noni bermaydi (false)
-  
-  // *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
-  // bir xil ma'noni beradigan so'zga aytiladi
+function calculateSumOfNumbers(arr: (number | string | obj | boolean)[]) {
+  const result = arr.reduce((total: number, ele) => {
+    if (typeof ele === "number") {
+      return total + ele;
+    } else if (typeof ele === "string" && !isNaN(Number(ele))) {
+      return total + Number(ele);
+    } else if(typeof ele === "object" && "son" in ele) {
+      return total + ele.son;
+    }else{
+      return total;
+    }
+  }, 0);
+  console.log(`berilgan arraydagi bari sonlar yigindisi ${result} ga teng`)
+}
 
+calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 
+// Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
+// Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
 
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]); return 45
+
+// Yuqoridagi misolda array tarkibida faqatgina ikkita yagona son mavjud bular 10 hamda 35
+// Qolganlari nested bo'lib yoki type'lari number emas.
+
+// TASK N:
+// function palindromCheck(arr:string){
+
+//   const result = arr.split('').reverse().join('')
+//    if(result === arr){
+//      return true
+//   }
+
+//   console.log(result === arr)
+
+// }
+
+// palindromCheck("dad")
+// palindromCheck("son")
+
+// Parametr sifatida yagona string qabul qiladigan function tuzing.
+// Va bu function string'ni palindrom so'z yoki palindrom so'z emasligini aniqlab (boolean)
+// 'true' yokida 'false' qaytarsin.
+
+// MASALAN: palindromCheck("dad") return true; palindromCheck("son") return false;
+// Birinchi misolda 'dad' so'zini ikkala tarafdan o'qilganda ham bir xil ma'noni beradi (true)
+// Ikkinchi misolda 'son' so'zini ikkala tarafdan o'qilganda bir xil ma'noni bermaydi (false)
+
+// *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
+// bir xil ma'noni beradigan so'zga aytiladi
 
 //   TASK M:
 
@@ -89,9 +139,6 @@ GraphQL Api
 // }
 
 // getSquareNumbers([1, 2, 3]);
-
-
-
 
 // function getSquareNumbers(a: number[]) {
 //   const result = a.map((a) => a * a);
