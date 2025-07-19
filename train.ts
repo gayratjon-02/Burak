@@ -43,6 +43,25 @@ GraphQL Api
   
   
   */
+
+//   TASK P:
+
+function objectToArray(arr: object) {
+  // console.log("arr", arr);
+const result = Object.entries(arr)
+console.log("result:", result)
+
+}
+
+objectToArray({ a: 10, b: 20 });
+
+// Parametr sifatida yagona object qabul qiladigan function yozing.
+// Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
+
+// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+
+// ************************************************************************
+
 // TASK O:
 
 // type MyTuple = [number, string, { son: number }, boolean, number];
@@ -73,24 +92,24 @@ GraphQL Api
 
 // calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 
-type obj = { son: number };
+// type obj = { son: number };
 
-function calculateSumOfNumbers(arr: (number | string | obj | boolean)[]) {
-  const result = arr.reduce((total: number, ele) => {
-    if (typeof ele === "number") {
-      return total + ele;
-    } else if (typeof ele === "string" && !isNaN(Number(ele))) {
-      return total + Number(ele);
-    } else if(typeof ele === "object" && "son" in ele) {
-      return total + ele.son;
-    }else{
-      return total;
-    }
-  }, 0);
-  console.log(`berilgan arraydagi bari sonlar yigindisi ${result} ga teng`)
-}
+// function calculateSumOfNumbers(arr: (number | string | obj | boolean)[]) {
+//   const result = arr.reduce((total: number, ele) => {
+//     if (typeof ele === "number") {
+//       return total + ele;
+//     } else if (typeof ele === "string" && !isNaN(Number(ele))) {
+//       return total + Number(ele);
+//     } else if(typeof ele === "object" && "son" in ele) {
+//       return total + ele.son;
+//     }else{
+//       return total;
+//     }
+//   }, 0);
+//   console.log(`berilgan arraydagi bari sonlar yigindisi ${result} ga teng`)
+// }
 
-calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
+// calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 
 // Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
 // Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
@@ -99,6 +118,8 @@ calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 
 // Yuqoridagi misolda array tarkibida faqatgina ikkita yagona son mavjud bular 10 hamda 35
 // Qolganlari nested bo'lib yoki type'lari number emas.
+
+// ************************************************************************
 
 // TASK N:
 // function palindromCheck(arr:string){
@@ -126,6 +147,8 @@ calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 // *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
 // bir xil ma'noni beradigan so'zga aytiladi
 
+// ************************************************************************
+
 //   TASK M:
 
 // function getSquareNumbers(numbers: number[]) {
@@ -152,6 +175,8 @@ calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 // tashkil topgan object hosil qilib, hosil bo'lgan objectlarni array ichida qaytarsin
 
 // MASALAN: MASALAN: getSquareNumbers([1, 2, 3]) return [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }];
+
+// ************************************************************************
 
 // TASK L:
 // function  reverseSentence(arr:string) {
@@ -214,10 +239,12 @@ calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 // Yuqoridagi text tarkibida 'Uzbekistan'
 // eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda
 
+// ************************************************************************
+
 // TASK I:
 
 // function majorityElement(numArr: number[]) {
-//   // console.log(numArr);
+// console.log(numArr);
 //   let maxCount = 0;
 //   let maj: number | null = null;
 //   for (let i = 0; i < numArr.length; i++) {
@@ -225,7 +252,7 @@ calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 //     for (let j = 0; j < numArr.length; j++) {
 //       if (numArr[i] === numArr[j]) {
 //         count++;
-//         // console.log(count);
+//          console.log(count);
 //       }
 //     }
 //     if (count > maxCount) {
@@ -267,6 +294,8 @@ GraphQL Api
 
 // console.log("Train js");
 
+// ************************************************************************
+
 // H2-TASK:
 
 // function getDigits(str: string): void {
@@ -297,7 +326,7 @@ GraphQL Api
 // import chalk from 'chalk';
 
 // console.log(chalk.blue('Hello world!'));
-// // TASK G:
+// TASK G:
 // function getHighestIndex(text){
 //     const result = Math.max(...text)
 //     console.log(`berilgan array'ning ichidagi eng katta son bu ${chalk.red(`${result}`)} va uning array'dagi index raqami bu ${chalk.bgMagenta.magenta(`${text.indexOf(result)}`)} `);
@@ -333,6 +362,8 @@ GraphQL Api
 
 // findLargestNumber([2,4,5342,6546,345,435])
 
+// ************************************************************************
+
 // TASK F
 // function findDoublers(text) {
 //         const arr = text.split("");
@@ -354,6 +385,8 @@ GraphQL Api
 
 // MASALAN: findDoublers("hello"); natija true qaytadi. Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
 
+// ************************************************************************
+
 // E-TASK:
 
 // function getReverse(str) {
@@ -367,6 +400,8 @@ GraphQL Api
 // MASALAN: getReverse("hello") return qilsin "olleh"
 
 // @MITASK
+
+// ************************************************************************
 
 // TASK D
 // function checkContent(par1, par2){
@@ -384,7 +419,7 @@ GraphQL Api
 // Yuqoridagi misolda birinchi va ikkinchi parametr qiymatli bir xil
 // ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi.
 
-// *****************************
+// ************************************************************************
 
 // TASK-C
 // const moment = require("moment");
@@ -454,6 +489,8 @@ GraphQL Api
 // shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
 // Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
 
+// ************************************************************************
+
 // B-TASK:
 
 // function countDigits(text) {
@@ -491,7 +528,7 @@ GraphQL Api
 
 // Masalan: countLetter("e", "engineer")
 // 'engineer' so'zi tarkibida 'e' harfi 3 marotaba takrorlanganligi uchun
-// // 3 sonini qaytaradi
+//  3 sonini qaytaradi
 
 // Assalomu alaykum
 
@@ -500,6 +537,9 @@ GraphQL Api
 // yozish tartibingiz:
 
 // Masalani izohi
+
+// ************************************************************************
+
 // A-TASK:
 
 // Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
@@ -553,7 +593,8 @@ GraphQL Api
 
 // console.log("Passead here 1");
 
-//  *********************************************************
+// ************************************************************************
+
 // Video 2 : aSynchronous function
 
 // console.log("Jack Ma maslahatlari");
