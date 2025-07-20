@@ -9,27 +9,42 @@ $(function () {
     } else {
       $("#product-volume").hide();
       $("#product-collection").show();
-
-
     }
   });
 });
 
+$("#process-btn").on("click", () => {
+  $(".dish-container").slideToggle(500);
+  $("#process-btn").css("display", "none");
+});
 
-$("#process-btn").on("click", ()=> {
-  $(".dish-container").slideToggle(500)
-  $("#process-btn").css("display", "none")
-})
+$("#cancel-btn").on("click", () => {
+  $(".dish-container").slideToggle(400);
+  $("#process-btn").css("display", "flex");
+});
 
+$(".new-product-status").on("change", async function (e) {
+  const id = e.target.id;
+  const productStatus = $(`#${id}.new-product-status`).val();
+  console.log("id:", id);
 
-$("#cancel-btn").on("click", ()=> {
-  $(".dish-container").slideToggle(400)
-  $("#process-btn").css("display", "flex")
-})
+  console.log("productStatus", productStatus);
 
-
-
-
+  try {
+    const response = await axios.post(`/admin/product/${id}`, {
+      productStatus: productStatus,
+    });
+    console.log("response", response);
+    const result = response.data;
+    if (result.data) {
+      console.log("Product Updated!!!");
+      $(".new-product-status").blur();
+    } else alert("Product Update failed!");
+  } catch (err) {
+    console.log(err);
+    alert("Product Update failed!");
+  }
+});
 
 function validateForm() {
   const productName = $(".product-name").val();
@@ -48,7 +63,7 @@ function validateForm() {
     productStatus === ""
   ) {
     alert("Please insert all details!!!");
-    return false; 
+    return false;
   } else return true;
 }
 
