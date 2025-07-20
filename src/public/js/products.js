@@ -26,9 +26,6 @@ $("#cancel-btn").on("click", () => {
 $(".new-product-status").on("change", async function (e) {
   const id = e.target.id;
   const productStatus = $(`#${id}.new-product-status`).val();
-  console.log("id:", id);
-
-  console.log("productStatus", productStatus);
 
   try {
     const response = await axios.post(`/admin/product/${id}`, {
@@ -37,7 +34,6 @@ $(".new-product-status").on("change", async function (e) {
     console.log("response", response);
     const result = response.data;
     if (result.data) {
-      console.log("Product Updated!!!");
       $(".new-product-status").blur();
     } else alert("Product Update failed!");
   } catch (err) {
