@@ -26,8 +26,14 @@ class ProductService {
 
   public async createNewProduct(input: ProductInput): Promise<Product> {
     try {
+    console.log("passed here1")
+
       return await this.productModel.create(input);
+
+
     } catch (err) {
+      console.log("passed here error")
+
       console.log("Error, model:createNewProduct", err);
       throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
     }

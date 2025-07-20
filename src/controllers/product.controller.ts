@@ -39,17 +39,26 @@ productController.createNewProduct = async (
       return ele.path;
     });
 
-    await productService.createNewProduct(data);
+    if(data.productVolume) {
+      data.productVolume = Number(data.productVolume);
+    }
+    console.log("passed heere boshiga")
+    console.log(typeof req.body.productVolume);
+    console.log("req.body:", req.body)
 
+
+
+    await productService.createNewProduct(data);
+    console.log("passed here controller")
     res.send(
-      `<script> alert("Successful creation); window.location.replace('admin/product/all')</script>`
+      `<script> alert("Successful creation"); window.location.replace('/admin/product/all')</script>`
     );
   } catch (err) {
     console.log("Error createNewProduct:", err);
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert("${message}"); window.location.replace('admin/product/all')</script>`
+      `<script> alert("${message}"); window.location.replace('/admin/product/all')</script>`
     );
   }
 };

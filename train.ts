@@ -46,8 +46,7 @@ GraphQL Api
 
 //   TASK P:
 
-function objectToArray(arr: object) {
-  // console.log("arr", arr);
+function objectToArray(arr: any) {
 const result = Object.entries(arr)
 console.log("result:", result)
 
