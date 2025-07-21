@@ -44,15 +44,46 @@ GraphQL Api
   
   */
 
-//   TASK P:
 
-function objectToArray(arr: any) {
-const result = Object.entries(arr)
-console.log("result:", result)
 
+
+
+// TASK Q:
+//
+
+function hasProperty(par1: object, par2: any){
+// const result =  Object.entries(par1);
+    console.log(par2 in par1)
+    
+    // console.log(result2)
 }
 
-objectToArray({ a: 10, b: 20 });
+
+
+hasProperty({ name: "BMW", model: "M3" }, "name");
+
+
+//     Shunday function yozing, u 2 ta parametrga ega bo'lib
+// birinchisi object, ikkinchisi string bo'lsin.
+// Agar qabul qilinayotgan ikkinchi string, objectning
+// biror bir propertysiga mos kelsa, 'true', aks holda mos kelmasa 'false' qaytarsin.
+//
+//     MASALAN: hasProperty({ name: "BMW", model: "M3" }, "model"); return true;
+// Ushbu misolda, 'model' string, objectning propertysiga mos kelganligi uchun 'true' natijani qaytarmoqda
+//
+// MASALAN: hasProperty({ name: "BMW", model: "M3" }, "year"); return false;
+// Ushbu misolda, ikkinchi argument sifatida berilayotgan 'year' objectning
+// propertysida mavjud bo'lmaganligi uchun 'false' natijani qaytarmoqda.
+
+//   TASK P:
+
+// function objectToArray(arr: any) {
+// const result = Object.entries(arr)
+// console.log("result:", result)
+//
+// }
+//
+// objectToArray({ a: 10, b: 20 });
 
 // Parametr sifatida yagona object qabul qiladigan function yozing.
 // Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
