@@ -45,22 +45,54 @@ GraphQL Api
   */
 
 
+  // TASK R
+
+function calculate(str: string){
+  
+  console.log(eval(str))
+
+}
+
+
+  calculate("1 + 3");
+
+// 
+  function evil(fn: string) {
+    return new Function('return ' + fn)();
+  }
+  
+  console.log(evil("1 + 3")); 
+
+  // Shunday function yozing, u string parametrga ega bo'lsin.
+  // Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
+  // string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
+  
+  // MASALAN: calculate("1 + 3"); return 4;
+  // 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda.
+  
+
+
+
+
+// ************************************************************************
+
+
 
 
 
 // TASK Q:
 //
 
-function hasProperty(par1: object, par2: any){
-// const result =  Object.entries(par1);
-    console.log(par2 in par1)
+// function hasProperty(par1: object, par2: any){
+ // const result =  Object.entries(par1);
+//     console.log(par2 in par1)
     
     // console.log(result2)
-}
+// }
 
 
 
-hasProperty({ name: "BMW", model: "M3" }, "name");
+// hasProperty({ name: "BMW", model: "M3" }, "name");
 
 
 //     Shunday function yozing, u 2 ta parametrga ega bo'lib
@@ -74,6 +106,13 @@ hasProperty({ name: "BMW", model: "M3" }, "name");
 // MASALAN: hasProperty({ name: "BMW", model: "M3" }, "year"); return false;
 // Ushbu misolda, ikkinchi argument sifatida berilayotgan 'year' objectning
 // propertysida mavjud bo'lmaganligi uchun 'false' natijani qaytarmoqda.
+
+
+// ************************************************************************
+
+
+
+
 
 //   TASK P:
 
