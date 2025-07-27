@@ -44,56 +44,70 @@ GraphQL Api
   
   */
 
+//   TASK S
 
-  // TASK R
+function missingNumber(num: number[]) {
+  const n = num.length;
+  const expectedSum = (n * (n + 1)) / 2;
 
-function calculate(str: string){
-  
-  console.log(eval(str))
+  let actualSum = 0;
+  for (let i = 0; i < num.length; i++) {
+    actualSum += num[i];
+  }
 
+  console.log(expectedSum - actualSum);
 }
 
+missingNumber([3, 0, 1]); 
+;
 
-  calculate("1 + 3");
+// Shunday function tuzing, u numberlardan tashkil topgan array qabul qilsin
+// va o'sha numberlar orasidagi tushib qolgan sonni topib uni return qilsin.
 
-// 
-  function evil(fn: string) {
-    return new Function('return ' + fn)();
-  }
-  
-  console.log(evil("1 + 3")); 
+// MASALAN: missingNumber([3, 0, 1]); return 2
 
-  // Shunday function yozing, u string parametrga ega bo'lsin.
-  // Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
-  // string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
-  
-  // MASALAN: calculate("1 + 3"); return 4;
-  // 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda.
-  
-
-
-
+// Yuqoridagi misolda, berilayotgan sonlar tarkibini tartiblasak
+// '2' soni tushib qolgan
 
 // ************************************************************************
 
+// TASK R
 
+// function calculate(str: string){
 
+//   console.log(eval(str))
 
+// }
+
+//   calculate("1 + 3");
+
+// //
+//   function evil(fn: string) {
+//     return new Function('return ' + fn)();
+//   }
+
+//   console.log(evil("1 + 3"));
+
+// Shunday function yozing, u string parametrga ega bo'lsin.
+// Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
+// string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
+
+// MASALAN: calculate("1 + 3"); return 4;
+// 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda.
+
+// ************************************************************************
 
 // TASK Q:
 //
 
 // function hasProperty(par1: object, par2: any){
- // const result =  Object.entries(par1);
+// const result =  Object.entries(par1);
 //     console.log(par2 in par1)
-    
-    // console.log(result2)
+
+// console.log(result2)
 // }
 
-
-
 // hasProperty({ name: "BMW", model: "M3" }, "name");
-
 
 //     Shunday function yozing, u 2 ta parametrga ega bo'lib
 // birinchisi object, ikkinchisi string bo'lsin.
@@ -107,12 +121,7 @@ function calculate(str: string){
 // Ushbu misolda, ikkinchi argument sifatida berilayotgan 'year' objectning
 // propertysida mavjud bo'lmaganligi uchun 'false' natijani qaytarmoqda.
 
-
 // ************************************************************************
-
-
-
-
 
 //   TASK P:
 
