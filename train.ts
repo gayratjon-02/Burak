@@ -44,22 +44,55 @@ GraphQL Api
   
   */
 
-//   TASK S
+//   TASK T
 
-function missingNumber(num: number[]) {
-  const n = num.length;
-  const expectedSum = (n * (n + 1)) / 2;
+function mergeSortedArrays(arr: number[], arr2: number[]) {
+ const result = arr.concat(arr2)
+ result.sort((a, b) => a - b) ;
+ console.log(result)
 
-  let actualSum = 0;
-  for (let i = 0; i < num.length; i++) {
-    actualSum += num[i];
-  }
 
-  console.log(expectedSum - actualSum);
 }
 
-missingNumber([3, 0, 1]); 
-;
+
+mergeSortedArrays([0, 44, 3, 4, 31], [4, 6, 30]);
+
+
+// Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
+// Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
+
+// MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30, 31];
+
+// Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda.
+
+
+
+
+
+
+// ************************************************************************
+
+
+
+
+
+
+
+//   TASK S
+
+// function missingNumber(num: number[]) {
+//   const n = num.length;
+//   const expectedSum = (n * (n + 1)) / 2;
+
+//   let actualSum = 0;
+//   for (let i = 0; i < num.length; i++) {
+//     actualSum += num[i];
+//   }
+
+//   console.log(expectedSum - actualSum);
+// }
+
+// missingNumber([3, 0, 1]);
 
 // Shunday function tuzing, u numberlardan tashkil topgan array qabul qilsin
 // va o'sha numberlar orasidagi tushib qolgan sonni topib uni return qilsin.
