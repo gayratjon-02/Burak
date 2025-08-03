@@ -44,19 +44,43 @@ GraphQL Api
   
   */
 
-//   TASK T
+//   TASK U
 
-function mergeSortedArrays(arr: number[], arr2: number[]) {
- const result = arr.concat(arr2)
- result.sort((a, b) => a - b) ;
- console.log(result)
+// Shunday function tuzing, uni number parametri bo'lsin.
+// Va bu function berilgan parametrgacha, 0'dan boshlab
+// oraliqda nechta toq sonlar borligini aniqlab return qilsi.
 
+// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
 
+// Yuqoridagi birinchi misolda, argument sifatida, 9 berilmoqda.
+// Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud.
+// Keyingi namunada ham xuddi shunday xolat takrorlanmoqda.
+
+function sumOdds(num: number) {
+  let a = 0;
+  for (let i = 0; i <= num; i++) {
+    if (i % 2 !== 0) {
+      a++;
+    }
+  }
+  console.log(a)
 }
 
+sumOdds(9);
+sumOdds(11) 
 
-mergeSortedArrays([0, 44, 3, 4, 31], [4, 6, 30]);
+// ************************************************************************
 
+//   TASK T
+
+// function mergeSortedArrays(arr: number[], arr2: number[]) {
+//  const result = arr.concat(arr2)
+//  result.sort((a, b) => a - b) ;
+//  console.log(result)
+
+// }
+
+// mergeSortedArrays([0, 44, 3, 4, 31], [4, 6, 30]);
 
 // Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
 // Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
@@ -65,18 +89,7 @@ mergeSortedArrays([0, 44, 3, 4, 31], [4, 6, 30]);
 
 // Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda.
 
-
-
-
-
-
 // ************************************************************************
-
-
-
-
-
-
 
 //   TASK S
 
