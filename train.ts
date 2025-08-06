@@ -44,6 +44,34 @@ GraphQL Api
   
   */
 
+//   TASK V
+function countChars(str: string) {
+  const counterEach: Record<string, number> = {};
+
+  for (const a of str) {
+    if (counterEach[a]) {
+      counterEach[a]++;
+    } else {
+      counterEach[a] = 1;
+    }
+  }
+  console.log(counterEach);
+}
+
+countChars("hello");
+
+// Shunday function yozing, uni string parametri bo'lsin.
+// Va bu function stringdagi har bir harfni o'zi bilan
+// necha marotaba taktorlanganligini ko'rsatuvchi object qaytarsin.
+
+// MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
+
+// Yuqoridagi misolda, 'hello' so'zi tarkibida
+// qatnashgan harflar necha marotaba takrorlangini bilan
+// object sifatida qaytarilmoqda.
+
+// ************************************************************************
+
 //   TASK U
 
 // Shunday function tuzing, uni number parametri bo'lsin.
@@ -56,18 +84,18 @@ GraphQL Api
 // Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud.
 // Keyingi namunada ham xuddi shunday xolat takrorlanmoqda.
 
-function sumOdds(num: number) {
-  let a = 0;
-  for (let i = 0; i <= num; i++) {
-    if (i % 2 !== 0) {
-      a++;
-    }
-  }
-  console.log(a)
-}
+// function sumOdds(num: number) {
+//   let a = 0;
+//   for (let i = 0; i <= num; i++) {
+//     if (i % 2 !== 0) {
+//       a++;
+//     }
+//   }
+//   console.log(a)
+// }
 
-sumOdds(9);
-sumOdds(11) 
+// sumOdds(9);
+// sumOdds(11)
 
 // ************************************************************************
 
