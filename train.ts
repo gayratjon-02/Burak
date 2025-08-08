@@ -51,6 +51,22 @@ GraphQL Api
 
 // TASK W
 
+
+function chunkArray(arr: any[], size: number): any[][] {
+  const result: any[][] = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+
+  return result;
+}
+
+// Test
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2));
+// [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
+
+
 // Shunday function yozing, u o'ziga parametr sifatida
 // yagona array va number qabul qilsin. Siz tuzgan function
 // arrayni numberda berilgan uzunlikda kesib bo'laklarga
