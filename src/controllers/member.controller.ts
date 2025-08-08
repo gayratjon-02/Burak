@@ -1,9 +1,14 @@
 // Controller'lar doim objectlar orqali hosil qilinadi
 // import qilishimiz kerak libs ichidagi common.tsni
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
-import { LoginInput, Member, MemberInput } from "../libs/types/member";
+import {
+  ExtendedRequest,
+  LoginInput,
+  Member,
+  MemberInput,
+} from "../libs/types/member";
 import AuthService from "../models/Auth.service";
 import Errors, { HttpCode, Message } from "../libs/types/Errors";
 import { AUTH_TIMER } from "../libs/types/config";
@@ -48,24 +53,58 @@ memberController.login = async (req: Request, res: Response) => {
 
     res.status(HttpCode.OK).json({ member: result, accessToken: token });
   } catch (err) {
-    console.log("Error processLogin:", err);
+    console.log("Error login:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
   }
 };
 
-memberController.verifyAuth = async (req: Request, res: Response) => {
+// LogOut
+
+memberController.logout = (req: ExtendedRequest, res: Response) => {
   try {
-    let member = null;
+    console.log("logout");
+    res.cookie("accessToken", null, { maxAge: 0, httpOnly: true });
+    res.status(HttpCode.OK).json({ logout: true });
+  } catch (err) {
+    console.log("Error logout:", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.standard.code).json(Errors.standard);
+  }
+};
+
+memberController.verifyAuth = async (
+  req: ExtendedRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
     const token = req.cookies["accessToken"];
-    if (token) member = await authService.checkAuth(token);
-    if (!member)
+    if (token) req.member = await authService.checkAuth(token);
+    if (!req.member)
       throw new Errors(HttpCode.UNAUTHORIZED, Message.NOT_AUTHENTICATED);
-    res.status(HttpCode.OK).json({ member: member });
+
+    next();
   } catch (err) {
     console.log("Error verifyAuth:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code).json(Errors.standard);
+  }
+};
+
+memberController.retrieveAuth = async (
+  req: ExtendedRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const token = req.cookies["retrieveAuth"];
+    if (token) req.member = await authService.checkAuth(token);
+
+    next();
+  } catch (err) {
+    console.log("Error retrieveAuth:", err);
+    next();
   }
 };
 
