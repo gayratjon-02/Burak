@@ -4,6 +4,9 @@ import memberController from "./controllers/member.controller";
 import uploader from "./libs/utils/uploader";
 
 /** Member **/
+
+router.get("/member/restaurant", memberController.getRestaurant)
+
 router.post("/member/login", memberController.login); // call
 router.post("/member/signup", memberController.signup); // call
 router.post(
