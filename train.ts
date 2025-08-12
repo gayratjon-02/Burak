@@ -49,23 +49,54 @@ GraphQL Api
   
   */
 
-// TASK W
+//   TASK X
 
+function countOccurrences(obj: Record<string, any>, targetKey: string): number {
+  let count = 0;
 
-function chunkArray(arr: any[], size: number): any[][] {
-  const result: any[][] = [];
+  for (const key in obj) {
+    if (key === targetKey) {
+      count++;
+    }
 
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      count += countOccurrences(obj[key], targetKey);
+    }
   }
-
-  return result;
+  return count;
 }
 
-// Test
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2));
-// [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
+console.log(countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model'))
 
+// Shunday function yozing, uni object va string parametrlari bo'lsin.
+// Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+// necha marotaba takrorlanganlini sanab qaytarsin.
+
+// Eslatma => Nested object'lar ham sanalsin
+
+// MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+// Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
+// Funktsiya, shu ikkinchi argument 'model', birinchi argument object
+// tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
+
+// ************************************************************************
+
+// TASK W
+
+// function chunkArray(arr: any[], size: number): any[][] {
+//   const result: any[][] = [];
+
+//   for (let i = 0; i < arr.length; i += size) {
+//     result.push(arr.slice(i, i + size));
+//   }
+
+//   return result;
+// }
+
+// // Test
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2));
+// [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
 
 // Shunday function yozing, u o'ziga parametr sifatida
 // yagona array va number qabul qilsin. Siz tuzgan function
