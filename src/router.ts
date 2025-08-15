@@ -6,7 +6,7 @@ import productController from "./controllers/product.controller";
 
 /** Member **/
 
-router.get("/member/restaurant", memberController.getRestaurant)
+router.get("/member/restaurant", memberController.getRestaurant);
 
 router.post("/member/login", memberController.login); // call
 router.post("/member/signup", memberController.signup); // call
@@ -32,7 +32,12 @@ router.get("/member/top-users", memberController.getTopUsers);
 
 /** Product **/
 
-router.get("/product/all", productController.getProducts )
+router.get("/product/all", productController.getProducts);
+router.get(
+  "/product/:id",
+  memberController.retrieveAuth,
+  productController.getProduct
+);
 
 /** Order **/
 
