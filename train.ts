@@ -49,24 +49,64 @@ GraphQL Api
   
   */
 
-//   TASK X
+//   TASK Y
 
-function countOccurrences(obj: Record<string, any>, targetKey: string): number {
-  let count = 0;
+//TODO Method 1
 
-  for (const key in obj) {
-    if (key === targetKey) {
-      count++;
-    }
-
-    if (typeof obj[key] === "object" && obj[key] !== null) {
-      count += countOccurrences(obj[key], targetKey);
+function findIntersection(arr1: number[], arr2: number[]) {
+  const same: number[] = [];
+  for (const num of arr1) {
+    if (arr2.includes(num) && !same.includes(num)) {
+      same.push(num);
     }
   }
-  return count;
+  console.log("same:", same);
 }
 
-console.log(countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model'))
+findIntersection([1,2,3], [1,2,3]);
+
+//TODO Method 2
+
+function findIntersection2(arr1: number[], arr2: number[]) {
+  const set2 = new Set(arr2); // array ichida kop takrorlangan sonni faqat bittasini oladi
+  // console.log("set2:", set2);
+  const same = arr1.filter((num) => set2.has(num)); // has faqat Map va Set uchun ishlab , qiymatni tekshiradi
+  console.log("same:", [...new Set(same)]); // dublikatlarni olib tashlaydi
+}
+
+findIntersection2([1, 2, 3, 1], [3, 2, 2, 3, 3, 3, 2, 10, 0]);
+
+// Shunday function yozing, uni 2'ta array parametri bo'lsin.
+// Bu function ikkala arrayda ham ishtirok etgan bir xil
+// qiymatlarni yagona arrayga joylab qaytarsin.
+
+// MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+
+// Yuqoridagi misolda, argument sifatida berilayotgan array'larda
+// o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
+// ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
+// joylab return qilmoqda.
+
+// ************************************************************************
+
+//   TASK X
+
+// function countOccurrences(obj: Record<string, any>, targetKey: string): number {
+//   let count = 0;
+
+//   for (const key in obj) {
+//     if (key === targetKey) {
+//       count++;
+//     }
+
+//     if (typeof obj[key] === "object" && obj[key] !== null) {
+//       count += countOccurrences(obj[key], targetKey);
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model'))
 
 // Shunday function yozing, uni object va string parametrlari bo'lsin.
 // Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
