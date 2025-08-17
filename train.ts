@@ -49,32 +49,59 @@ GraphQL Api
   
   */
 
+//   TASK Z
+function sumEvens(num: number[]) {
+  const result = num
+    .filter((ele) => {
+      return ele % 2 === 0;
+    })
+    .reduce((acc, num) => acc + num);
+  console.log("result:", result);
+}
+
+sumEvens([1, 2, 3, 4]);
+sumEvens([1, 2, 3, 2]);
+
+// Shunday function yozing. Bu function sonlardan iborat array
+// qabul qilsin. Function'ning vazifasi array tarkibidagi juft
+// sonlarni topib ularni yig'disini qaytarsin.
+
+// MASALAN:
+// sumEvens([1, 2, 3]); return 2;
+// sumEvens([1, 2, 3, 2]); return 4;
+
+// Yuqoridagi misolda, bizning funktsiya
+// berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
+// sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda.
+
+// ************************************************************************
+
 //   TASK Y
 
-//TODO Method 1
+// //TODO Method 1
 
-function findIntersection(arr1: number[], arr2: number[]) {
-  const same: number[] = [];
-  for (const num of arr1) {
-    if (arr2.includes(num) && !same.includes(num)) {
-      same.push(num);
-    }
-  }
-  console.log("same:", same);
-}
+// function findIntersection(arr1: number[], arr2: number[]) {
+//   const same: number[] = [];
+//   for (const num of arr1) {
+//     if (arr2.includes(num) && !same.includes(num)) {
+//       same.push(num);
+//     }
+//   }
+//   console.log("same:", same);
+// }
 
-findIntersection([1,2,3], [1,2,3]);
+// findIntersection([1,2,3], [1,2,3]);
 
-//TODO Method 2
+// //TODO Method 2
 
-function findIntersection2(arr1: number[], arr2: number[]) {
-  const set2 = new Set(arr2); // array ichida kop takrorlangan sonni faqat bittasini oladi
-  // console.log("set2:", set2);
-  const same = arr1.filter((num) => set2.has(num)); // has faqat Map va Set uchun ishlab , qiymatni tekshiradi
-  console.log("same:", [...new Set(same)]); // dublikatlarni olib tashlaydi
-}
+// function findIntersection2(arr1: number[], arr2: number[]) {
+//   const set2 = new Set(arr2); // array ichida kop takrorlangan sonni faqat bittasini oladi
+//   // console.log("set2:", set2);
+//   const same = arr1.filter((num) => set2.has(num)); // has faqat Map va Set uchun ishlab , qiymatni tekshiradi
+//   console.log("same:", [...new Set(same)]); // dublikatlarni olib tashlaydi
+// }
 
-findIntersection2([1, 2, 3, 1], [3, 2, 2, 3, 3, 3, 2, 10, 0]);
+// findIntersection2([1, 2, 3, 1], [3, 2, 2, 3, 3, 3, 2, 10, 0]);
 
 // Shunday function yozing, uni 2'ta array parametri bo'lsin.
 // Bu function ikkala arrayda ham ishtirok etgan bir xil
