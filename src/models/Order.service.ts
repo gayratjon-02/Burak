@@ -90,7 +90,7 @@ class OrderService {
             from: "orderItems",
             localField: "_id",
             foreignField: "orderId",
-            as: "prderItems",
+            as: "orderItems",
           },
         },
         {
