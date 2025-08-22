@@ -49,18 +49,38 @@ GraphQL Api
   
   */
 
-//   TASK Z
-function sumEvens(num: number[]) {
-  const result = num
-    .filter((ele) => {
-      return ele % 2 === 0;
-    })
-    .reduce((acc, num) => acc + num);
-  console.log("result:", result);
+//   TASK ZA
+
+type Person = { age: number };
+
+function sortByAge(arr: Person[]) {
+  console.log(arr.sort((a, b) => a.age - b.age));
 }
 
-sumEvens([1, 2, 3, 4]);
-sumEvens([1, 2, 3, 2]);
+sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]);
+
+// Shunday function yozing, u array ichidagi objectlarni
+// 'age' qiymati bo'yicha sortlab bersin.
+
+// MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
+
+// Yuqoridagi misolda, kichik raqamlar katta raqamlar tomon
+// tartiblangan holatda return bo'lmoqda.
+
+// ************************************************************************
+
+//   TASK Z
+// function sumEvens(num: number[]) {
+//   const result = num
+//     .filter((ele) => {
+//       return ele % 2 === 0;
+//     })
+//     .reduce((acc, num) => acc + num);
+//   console.log("result:", result);
+// }
+
+// sumEvens([1, 2, 3, 4]);
+// sumEvens([1, 2, 3, 2]);
 
 // Shunday function yozing. Bu function sonlardan iborat array
 // qabul qilsin. Function'ning vazifasi array tarkibidagi juft
