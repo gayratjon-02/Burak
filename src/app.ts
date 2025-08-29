@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import path from "path";
 import router from "./router";
@@ -19,10 +20,16 @@ const store = new MongoDBStore({
 /** 1-ENTERANCE **/
 const app = express();
 app.use(express.static(path.join(__dirname, "public"))); // Traditional api
-app.use("/uploads", express.static(path.join(__dirname, '../uploads')));
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 // app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // REST API
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
 app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT));
 /** 2-SESSIONS **/
