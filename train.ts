@@ -49,21 +49,37 @@ GraphQL Api
   
   */
 
-function changeNumberInArray(
-  index: number,
-  arr: number[],
-  newValue: number
-): number[] {
-  let newArr = [...arr];
-
-  if (index >= 0 && index < newArr.length) {
-    newArr[index] = newValue;
+function removeDuplicate(str: string) {
+  let result = "";
+  for (let char of str) {
+    if (!result.includes(char)) {
+      result += char;
+    }
   }
-
-  return newArr;
+  return result;
 }
 
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+console.log(removeDuplicate("stringg"));
+console.log(removeDuplicate("programming"));
+console.log(removeDuplicate("aabbcc"));
+
+// ************************************************************************
+
+// function changeNumberInArray(
+//   index: number,
+//   arr: number[],
+//   newValue: number
+// ): number[] {
+//   let newArr = [...arr];
+
+//   if (index >= 0 && index < newArr.length) {
+//     newArr[index] = newValue;
+//   }
+
+//   return newArr;
+// }
+
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
 
 //   TASK ZC
 
