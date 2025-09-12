@@ -49,19 +49,45 @@ GraphQL Api
   
   */
 
-function removeDuplicate(str: string) {
-  let result = "";
-  for (let char of str) {
-    if (!result.includes(char)) {
-      result += char;
-    }
+//   TASK ZH
+
+// Shunday function yozing, u berilgan array parametri ichidagi
+// raqamlar orasidan, tartib bo'yicha eng kichik raqamdan, eng katta raqamgacha
+// tushirib qoldirilgan sonlarni o'zinigina topib bir array sifatida qaytarsin.
+
+function findDisappearedNumbers(num: number[]): Number {
+  const latestNum = num[num.length - 1];
+  // console.log("latest:", latestNum);
+  for (let i = 1; i <= latestNum; i++) {
+    if (!num.includes(i)) console.log(i);
   }
-  return result;
+
+  return 0;
 }
 
-console.log(removeDuplicate("stringg"));
-console.log(removeDuplicate("programming"));
-console.log(removeDuplicate("aabbcc"));
+findDisappearedNumbers([1, 3, 4, 7]);
+
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]); return [2, 5, 6];
+
+// Yuqoridagi misolda, eng katta raqam bu 7 va eng kichik raqam bu 1.
+// Function'ning vazifasi berilgan sonlar ichidan tushirib qoldirilgan
+// sonlarnigina topib qaytarmoqda.
+
+// ************************************************************************
+
+// function removeDuplicate(str: string) {
+//   let result = "";
+//   for (let char of str) {
+//     if (!result.includes(char)) {
+//       result += char;
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(removeDuplicate("stringg"));
+// console.log(removeDuplicate("programming"));
+// console.log(removeDuplicate("aabbcc"));
 
 // ************************************************************************
 
