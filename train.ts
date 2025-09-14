@@ -49,23 +49,35 @@ GraphQL Api
   
   */
 
+function delayHelloWorld(message: string): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(message);
+    }, 3000);
+  });
+}
+
+delayHelloWorld("Hello World!").then((result) => {
+  console.log(result);
+});
+
 //   TASK ZH
 
 // Shunday function yozing, u berilgan array parametri ichidagi
 // raqamlar orasidan, tartib bo'yicha eng kichik raqamdan, eng katta raqamgacha
 // tushirib qoldirilgan sonlarni o'zinigina topib bir array sifatida qaytarsin.
 
-function findDisappearedNumbers(num: number[]): Number {
-  const latestNum = num[num.length - 1];
-  // console.log("latest:", latestNum);
-  for (let i = 1; i <= latestNum; i++) {
-    if (!num.includes(i)) console.log(i);
-  }
+// function findDisappearedNumbers(num: number[]): Number {
+//   const latestNum = num[num.length - 1];
+//   // console.log("latest:", latestNum);
+//   for (let i = 1; i <= latestNum; i++) {
+//     if (!num.includes(i)) console.log(i);
+//   }
 
-  return 0;
-}
+//   return 0;
+// }
 
-findDisappearedNumbers([1, 3, 4, 7]);
+// findDisappearedNumbers([1, 3, 4, 7]);
 
 // MASALAN: findDisappearedNumbers([1, 3, 4, 7]); return [2, 5, 6];
 
