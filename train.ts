@@ -49,17 +49,36 @@ GraphQL Api
   
   */
 
-function delayHelloWorld(message: string): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(message);
-    }, 3000);
-  });
+// TASK ZJ:
+function reduceNestedArray(arr: any[]): number {
+  return arr.flat(Infinity).reduce((total, num) => total + num, 0);
 }
 
-delayHelloWorld("Hello World!").then((result) => {
-  console.log(result);
-});
+console.log(reduceNestedArray([1, [1, 2, [4]]]));
+console.log(reduceNestedArray([9, [5, 0, [1]]]));
+console.log(reduceNestedArray([[345, 21, 223, [4523]]]));
+
+// Shunday function yozing, u berilgan array ichidagi
+// raqamlarni qiymatini hisoblab qaytarsin.
+
+// MASALAN: reduceNestedArray([1, [1, 2, [4]]]); return 8;
+
+// Yuqoridagi misolda, array nested bo'lgan holdatda ham,
+// bizning function ularning yig'indisini hisoblab qaytarmoqda.
+
+// ************************************************************************
+
+// function delayHelloWorld(message: string): Promise<string> {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(message);
+//     }, 3000);
+//   });
+// }
+
+// delayHelloWorld("Hello World!").then((result) => {
+//   console.log(result);
+// });
 
 //   TASK ZH
 
