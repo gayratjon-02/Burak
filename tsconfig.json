@@ -7,10 +7,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
-    "paths": {
-      "*": ["node_modules/*"]
-    }
+    "types": ["node", "express", "express-session", "multer", "jsonwebtoken"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]

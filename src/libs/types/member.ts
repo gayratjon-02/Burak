@@ -2,6 +2,8 @@ import { ObjectId } from "mongoose";
 import { MemberStatus, MemberType } from "./enums/member.enum";
 import { Request } from "express";
 import { Session } from "express-session";
+import { ParamsDictionary } from "express-serve-static-core";
+import { ParsedQs } from "qs";
 
 export interface Member {
   _id: ObjectId;
@@ -46,15 +48,29 @@ export interface MemberUpdateInput {
   memberImage?: string;
 }
 
-export interface ExtendedRequest extends Request {
+export interface ExtendedRequest<
+  P extends ParamsDictionary = ParamsDictionary,
+  ReqBody = any,
+  ReqQuery extends ParsedQs = ParsedQs
+> extends Request<P> {
+  params: P;
+  body: ReqBody;
+  query: ReqQuery;
   member: Member;
-  file: Express.Multer.File;
-  files: Express.Multer.File[];
+  file?: Express.Multer.File;
+  files?: Express.Multer.File[];
 }
 
-export interface AdminRequest extends Request {
+export interface AdminRequest<
+  P extends ParamsDictionary = ParamsDictionary,
+  ReqBody = any,
+  ReqQuery extends ParsedQs = ParsedQs
+> extends Request<P> {
+  params: P;
+  body: ReqBody;
+  query: ReqQuery;
   member: Member;
   session: Session & { member: Member };
-  file: Express.Multer.File;
-  files: Express.Multer.File[];
+  file?: Express.Multer.File;
+  files?: Express.Multer.File[];
 }

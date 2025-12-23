@@ -5,11 +5,12 @@ import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/types/config";
-
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 import { T } from "./libs/types/common";
 import cookieParser from "cookie-parser";
+import { Server as SocketIOServer } from "socket.io";
+import http from "http";
 
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
@@ -59,4 +60,23 @@ app.set("view engine", "ejs");
 app.use("/admin", routerAdmin); // SSR: EJS
 app.use("/", router); // SPA: REACT
 
-export default app;
+const server = http.createServer(app);
+const io = new SocketIOServer(server, {
+  cors: {
+    origin: true,
+    credentials: true,
+  },
+});
+
+let summaryClients = 0;
+io.on("connection", (socket) => {
+  summaryClients++;
+  console.log(`Connection & Total: ${summaryClients}`);
+
+  socket.on("disconnect", () => {
+    summaryClients--;
+    console.log(`Disconnect & Total: ${summaryClients}`);
+  });
+});
+
+export default server;

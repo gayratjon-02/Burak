@@ -4,26 +4,28 @@ import { Member } from "../libs/types/member";
 import jwt from "jsonwebtoken";
 import { HttpCode } from "../libs/types/Errors";
 class AuthService {
-  private readonly secretToken;
+  private readonly secretToken: string;
   constructor() {
     this.secretToken = process.env.SECRET_TOKEN as string;
   }
 
-  public async createToken(payload: Member) {
-    return new Promise((resolve, reject) => {
+  public async createToken(payload: Member): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
       const duration = `${AUTH_TIMER}h`;
       jwt.sign(
         payload,
-        process.env.SECRET_TOKEN as string,
+        this.secretToken,
         {
           expiresIn: duration,
         },
-        (err, token) => {
-          if (err)
+        (err: Error | null, token?: string) => {
+          if (err) {
             reject(
               new Errors(HttpCode.UNAUTHORIZED, Message.TOKEN_CREATION_FAILED)
             );
-          else resolve(token as string);
+          } else {
+            resolve(token as string);
+          }
         }
       );
     });
