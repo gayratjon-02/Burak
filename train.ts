@@ -8,6 +8,26 @@
     - Error handling
 */
 
+/**
+ *   PM2 Commands:
+ * 1. pm2 ls
+ * 2. pm2 start dist/server.js --name=BURAK
+ * 3. pm2 start "npm run start:prod" --name=BURAK
+ * 4. pm2 stop ID
+ * pm2 delete ID
+ * pm2 restart ID
+ * pm2 monit
+ * 
+ * 
+ * 
+ * 
+ * shell
+ * chmod +x deploy.sh
+ *
+ *
+ *
+ *  **/
+
 /* 
 
 Traditinal Api
