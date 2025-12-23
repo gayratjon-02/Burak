@@ -5,3 +5,5 @@ src/.DS_Store
 .env
 uploads
 .idea/
+.env.development
+.env.production
